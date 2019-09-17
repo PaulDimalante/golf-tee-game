@@ -23,6 +23,7 @@ public class GolfTeeSolverApp implements GolfTeeSolver {
     public class Board implements GolfTeeSolver.Board {
         @Override
         public Piece get(int location) {
+            if(location != 1) return Piece.TEE;
             return Piece.EMPTY;
         }
     }

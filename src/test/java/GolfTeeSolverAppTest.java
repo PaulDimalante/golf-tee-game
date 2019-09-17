@@ -18,4 +18,11 @@ public class GolfTeeSolverAppTest {
         GolfTeeSolver.Board.Piece result = board.get(1);
         assertEquals(GolfTeeSolver.Board.Piece.EMPTY, result);
     }
+
+    @Test
+    public void getShouldReturnTeeWhenLocationIs2() {
+        GolfTeeSolver.Board board = new GolfTeeSolverApp().new Board();
+        GolfTeeSolver.Board.Piece result = board.get(2);
+        assertEquals(GolfTeeSolver.Board.Piece.TEE, result);
+    }
 }
