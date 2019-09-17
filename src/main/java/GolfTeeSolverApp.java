@@ -27,6 +27,8 @@ public class GolfTeeSolverApp implements GolfTeeSolver {
     }
 
     public class Board implements GolfTeeSolver.Board {
+        private String[] board = {"0","T","T","T","T","T","T","T","T","T","T","T","T","T","T"};
+
         @Override
         public Piece get(int location) {
             if(location != 1) return Piece.TEE;
