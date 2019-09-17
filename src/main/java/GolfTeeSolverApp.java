@@ -1,9 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class GolfTeeSolverApp implements GolfTeeSolver {
+    private List<GolfTeeSolver.Move> moves = new ArrayList<GolfTeeSolver.Move>();
+
     public class Move implements GolfTeeSolver.Move {
         private int moveFrom;
         private int moveTo;
+
+        public Move() {
+        }
 
         public Move(int moveFrom, int moveTo) {
             this.moveFrom = moveFrom;
@@ -30,7 +36,8 @@ public class GolfTeeSolverApp implements GolfTeeSolver {
 
     @Override
     public List<GolfTeeSolver.Move> solve(GolfTeeSolver.Board startingBoard) {
-        return null;
+        this.moves.add(new Move());
+        return this.moves;
     }
 
 }

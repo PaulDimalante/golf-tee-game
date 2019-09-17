@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.util.List;
+
 import static junit.framework.TestCase.assertEquals;
 
 public class GolfTeeSolverAppTest {
@@ -24,5 +26,13 @@ public class GolfTeeSolverAppTest {
         GolfTeeSolver.Board board = new GolfTeeSolverApp().new Board();
         GolfTeeSolver.Board.Piece result = board.get(2);
         assertEquals(GolfTeeSolver.Board.Piece.TEE, result);
+    }
+
+    @Test
+    public void solveShouldAddNewMoveToList() {
+        GolfTeeSolver solver = new GolfTeeSolverApp();
+        GolfTeeSolver.Board board = new GolfTeeSolverApp().new Board();
+        List<GolfTeeSolver.Move> result = solver.solve(board);
+        assertEquals(1, result.size());
     }
 }
