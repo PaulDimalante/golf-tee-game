@@ -1,24 +1,29 @@
 import java.util.List;
 
 public class GolfTeeSolverApp implements GolfTeeSolver {
-    private class Move implements GolfTeeSolver.Move {
+    public class Move implements GolfTeeSolver.Move {
+        private int moveFrom;
+        private int moveTo;
+
+        public Move(int moveFrom, int moveTo) {
+            this.moveFrom = moveFrom;
+            this.moveTo = moveTo;
+        }
+
         @Override
         public int getFrom() {
-            return 0;
+            return this.moveFrom;
         }
         @Override
         public int getTo() {
-            return 0;
+            return this.moveTo;
         }
     }
 
     public class Board implements GolfTeeSolver.Board {
         @Override
         public Piece get(int location) {
-            return null;
-        }
-        public int getRemainingPieces() {
-            return 13;
+            return Piece.EMPTY;
         }
     }
 
@@ -27,7 +32,4 @@ public class GolfTeeSolverApp implements GolfTeeSolver {
         return null;
     }
 
-    public Board getBoard() {
-        return new Board();
-    }
 }
