@@ -50,7 +50,7 @@ public class GolfTeeSolverImplTest {
     public void findMovesShouldHaveRemainingPiecesEq1() {
         GolfTeeSolver.Board board = new GolfTeeSolverImpl().new Board();
         GolfTeeSolverImpl.Grid grid = new GolfTeeSolverImpl().new Grid(board);
-        grid.findMove();
+        grid = grid.findMove();
         int result = grid.getRemainingPieces();
         assertEquals(1, result);
     }

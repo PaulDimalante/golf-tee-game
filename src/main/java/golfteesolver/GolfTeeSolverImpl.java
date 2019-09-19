@@ -6,7 +6,7 @@ public class GolfTeeSolverImpl implements GolfTeeSolver {
     private static int cnt = 0;
     private List<GolfTeeSolver.Move> moves = new ArrayList<GolfTeeSolver.Move>();
 
-    private class Grid {
+    class Grid {
         private int level;
         private int remainingPieces;
         private List<GolfTeeSolver.Move> moves = new ArrayList<GolfTeeSolver.Move>();
