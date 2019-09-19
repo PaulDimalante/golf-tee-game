@@ -109,25 +109,6 @@ public class GolfTeeSolverImpl implements GolfTeeSolver {
         public Grid findMove() {
             Grid newGrid = null;
             int startPos = 0;
-//            if (this.level == 2) {
-//                startPos = 14;
-//            } else if (this.level == 4) {
-//                startPos = 12;
-//            } else if (this.level == 5) {
-//                startPos = 10;
-//            } else if (this.level == 6) {
-//                startPos = 13;
-//            } else if (this.level == 7) {
-//                startPos = 11;
-//            } else if (this.level == 8) {
-//                startPos = 6;
-//            } else if (this.level == 9) {
-//                startPos = 9;
-//            } else if (this.level == 10) {
-//                startPos = 0;
-//            } else if (this.level == 11) {
-//                startPos = 3;
-//            }
 
             for (int i = startPos; i < 15; i++) {
                 newGrid = new Grid(this);
@@ -187,11 +168,6 @@ public class GolfTeeSolverImpl implements GolfTeeSolver {
             return move;
         }
 
-        @Override
-        public String toString() {
-            return "remaining=" + remainingPieces + "; " + toKey();
-        }
-
         public String toKey() {
             String str = "";
             for (GolfTeeSolver.Move m : moves) {
@@ -204,23 +180,6 @@ public class GolfTeeSolverImpl implements GolfTeeSolver {
     public class Move implements GolfTeeSolver.Move {
         private int moveFrom;
         private int moveTo;
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Move move = (Move) o;
-            return moveFrom == move.moveFrom &&
-                    moveTo == move.moveTo;
-        }
-
-        @Override
-        public int hashCode() {
-            return moveFrom * 100 + moveTo;
-        }
-
-        public Move() {
-        }
 
         public Move(int moveFrom, int moveTo) {
             this.moveFrom = moveFrom;
@@ -266,9 +225,6 @@ public class GolfTeeSolverImpl implements GolfTeeSolver {
         Grid grid = new Grid(startingBoard);
 
         grid = grid.findMove();
-//        while (grid.remainingPieces > 1) {
-//            grid = grid.findMove();
-//        }
         return grid.moves;
     }
 

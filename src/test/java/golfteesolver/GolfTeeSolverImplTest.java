@@ -55,4 +55,12 @@ public class GolfTeeSolverImplTest {
         assertEquals(1, result);
     }
 
+    @Test
+    public void solveShouldHave13Moves() {
+        GolfTeeSolver.Board board = new GolfTeeSolverImpl().new Board();
+        GolfTeeSolver solver = new GolfTeeSolverImpl();
+        List<GolfTeeSolver.Move> result = solver.solve(board);
+        assertEquals(13, result.size());
+    }
+
 }
