@@ -1,3 +1,5 @@
+package golfteesolver;
+
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -42,6 +44,15 @@ public class GolfTeeSolverImplTest {
         List<GolfTeeSolver.Move> result = mockSolver.solve(board);
         assertEquals(1, result.size());
         assertEquals(true, result.contains(move));
+    }
+
+    @Test
+    public void findMovesShouldHaveRemainingPiecesEq1() {
+        GolfTeeSolver.Board board = new GolfTeeSolverImpl().new Board();
+        GolfTeeSolverImpl.Grid grid = new GolfTeeSolverImpl().new Grid(board);
+        grid.findMove();
+        int result = grid.getRemainingPieces();
+        assertEquals(1, result);
     }
 
 }

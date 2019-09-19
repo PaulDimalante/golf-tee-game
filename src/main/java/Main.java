@@ -1,3 +1,6 @@
+import golfteesolver.GolfTeeSolver;
+import golfteesolver.GolfTeeSolverImpl;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +16,7 @@ public class Main {
             System.out.println("from="+move.getFrom()+"; to="+move.getTo());
             //String str = scanner.nextLine();
         }
-
+//        System.out.println("remaining pieces="+solver.)
     }
     private void displayBoard(GolfTeeSolver.Board board) {
         System.out.println("===========================================================");

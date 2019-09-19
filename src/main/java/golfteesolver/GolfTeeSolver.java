@@ -1,3 +1,5 @@
+package golfteesolver;
+
 import java.util.List;
 
 public interface GolfTeeSolver {
