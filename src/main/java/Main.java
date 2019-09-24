@@ -10,8 +10,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         GolfTeeSolver solver = new GolfTeeSolverImpl();
         GolfTeeSolver.Board board = new GolfTeeSolverImpl().new Board();
-        List<GolfTeeSolver.Move> moves = solver.solve(board);
         me.displayBoard(board);
+        List<GolfTeeSolver.Move> moves = solver.solve(board);
         for(GolfTeeSolver.Move move : moves) {
             System.out.println("from="+move.getFrom()+"; to="+move.getTo());
             //String str = scanner.nextLine();
@@ -24,6 +24,7 @@ public class Main {
         for(int r=0; r<5; r++) {
             for(int c=0; c<=r; c++) {
                 System.out.print(board.get(pos).toString());
+                pos++;
             }
             System.out.println();
         }

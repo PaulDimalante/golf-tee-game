@@ -64,6 +64,8 @@ public class GolfTeeSolverImpl implements GolfTeeSolver {
             return remainingPieces;
         }
 
+        public int getCordsMap(int r, int c) {return this.cordsMap[r][c];}
+
         private void fillGrid(GolfTeeSolver.Board startingBoard) {
             for (int i = 0; i < 15; i++) {
                 int r = cords[i][0];
@@ -198,21 +200,13 @@ public class GolfTeeSolverImpl implements GolfTeeSolver {
     }
 
     public class Board implements GolfTeeSolver.Board {
-        private Piece[] board = {Piece.EMPTY,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE,
-                Piece.TEE};
+        private Piece[] board = new Piece[15];
+
+        public Board() {
+            int empty = (int)Math.floor(Math.random() * 15);
+            Arrays.fill(this.board, Piece.TEE);
+            this.board[empty] = Piece.EMPTY;
+        }
 
         @Override
         public Piece get(int location) {
